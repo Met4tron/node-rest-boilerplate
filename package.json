@@ -11,7 +11,9 @@
     "test:watch": "cross-env NODE_ENV=test vitest -c ./test/vitest.config.js watch",
     "test:e2e": "cross-env NODE_ENV=test vitest -c ./test/vitest.config-e2e.js",
     "test:coverage": "cross-env NODE_ENV=test vitest -c ./test/vitest.config.js --coverage",
-    "lint": "eslint src --ext .js,.ts --fix"
+    "lint": "eslint src --ext .js,.ts --fix",
+    "prisma:generate": "npx prisma generate",
+    "prisma:studio": "npx prisma studio"
   },
   "keywords": [],
   "author": "Yuri Gomes (https://github.com/met4tron)",
