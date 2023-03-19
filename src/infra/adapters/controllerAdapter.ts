@@ -1,8 +1,10 @@
+import { Controller } from '@domain/infra/http/controller';
+import { Request } from '@domain/infra/http/request';
 import { FastifyReply, FastifyRequest } from 'fastify';
 
-export const controllerAdapter = async (controller: any) => {
+export const controllerAdapter = async (controller: Controller) => {
   return async (req: FastifyRequest, reply: FastifyReply) => {
-    const request = {
+    const request: Request = {
       body: req.body,
       params: req.params,
       headers: req.headers,
@@ -12,9 +14,9 @@ export const controllerAdapter = async (controller: any) => {
     const httpResponse = await controller.handle(request);
 
     if (httpResponse.statusCode >= 200 && httpResponse.statusCode <= 299) {
-      reply.status(httpResponse.statusCode).send(httpResponse.body);
+      return reply.status(httpResponse.statusCode).send(httpResponse.body);
     } else {
-      reply.status(httpResponse.statusCode).send({
+      return reply.status(httpResponse.statusCode).send({
         error: httpResponse.body.message,
       });
     }
