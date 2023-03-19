@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "swc src -d dist -s",
+    "start:prod": "cross-env NODE_ENV=production node dist/server.js",
+    "start:dev": "cross-env NODE_ENV=development nodemon"
   },
   "keywords": [],
   "author": "Yuri Gomes (https://github.com/met4tron)",
@@ -19,6 +21,7 @@
     "@sinclair/typebox": "^0.25.24",
     "argon2": "^0.30.3",
     "awilix": "^8.0.0",
+    "cross-env": "^7.0.3",
     "dayjs": "^1.11.7",
     "dotenv": "^16.0.3",
     "env-var": "^7.3.0",

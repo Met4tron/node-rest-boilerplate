@@ -1,0 +1,29 @@
+{
+  "exclude": [
+    "node_modules"
+  ],
+  "jsc": {
+    "parser": {
+      "syntax": "typescript",
+      "tsx": false,
+      "decorators": true,
+      "dynamicImport": true
+    },
+    "target": "es2020",
+    "paths": {
+      "@domain/*": [
+        "./src/domain/*"
+      ],
+      "@application/*": [
+        "./src/application/*"
+      ],
+      "@infra/*": [
+        "./src/infra/*"
+      ]
+    },
+    "baseUrl": "."
+  },
+  "module": {
+    "type": "commonjs"
+  }
+}

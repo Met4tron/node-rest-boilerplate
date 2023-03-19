@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "es2022"
+    ],
+    "typeRoots": [
+      "node_modules/@types",
+      "src/types"
+    ],
+    "module": "commonjs",
+    "target": "es2022",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "paths": {
+      "@infra/*": [
+        "./src/infra/*"
+      ],
+      "@domain/*": [
+        "./src/domain/*"
+      ],
+      "@application/*": [
+        "./src/application/*"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
